@@ -11,17 +11,18 @@
     "commander": "latest"
   },
   "devDependencies": {
+    "babel-cli": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-register": "latest",
+    "chai": "latest",
     "gulp": "latest",
     "gulp-babel": "latest",
     "gulp-sourcemaps": "latest",
-    "babel-preset-es2015": "latest",
-    "babel-register": "latest",
-    "babel-cli": "latest",
-    "mocha": "latest",
-    "chai": "latest"
+    "babel-istanbul": "latest",
+    "mocha": "latest"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-register --require babel-polyfill"
+    "test": "./node_modules/.bin/babel-istanbul cover ./node_modules/.bin/_mocha -- --require babel-register"
   },
   "engine": "node >= 6.x.x"
 }
