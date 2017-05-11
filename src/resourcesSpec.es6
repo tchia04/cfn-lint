@@ -116,7 +116,7 @@ function isSinglePrimitivePropertyType(parentPropertyType, propertyName){
 
 function isAdditionalPropertiesEnabled(resourceType){
     let spec = getType(resourceType);
-    return (spec.hasOwnProperty('AdditionalProperties') && spec['AdditionalProperties'] === true)
+    return (spec !== null && spec.hasOwnProperty('AdditionalProperties') && spec['AdditionalProperties'] === true)
 }
 
 function isPropertyTypeList(parentPropertyType, key){

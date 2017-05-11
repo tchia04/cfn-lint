@@ -1,0 +1,18 @@
+Resources:
+
+  LambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: main.lambdaHandler
+      Runtime: nodejs4.3
+      Timeout: 120
+      Description: "Runs a healthcheck"
+      Role: "SomeRole"
+      Code:
+        S3Bucket: "mysource"
+        S3Key: "SomeZIP.zip"
+        S3ObjectVersion: "ABCDEFGHIJK"
+      Environment:
+        Variables:
+          HEALTHCHECK_BUCKET: !Ref Bucket
+          SLACK_TEST_CHANNEL_ID: "ABCDEF"
